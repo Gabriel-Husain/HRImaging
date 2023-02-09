@@ -14,7 +14,7 @@ for i in range(10):
     # "Rewind" the stream to the beginning so we can read its content
     stream.seek(0)
     image = Image.open(stream)
-    image.save("../out/img" + i + ".png", "PNG")
+    image.save("../out/img" + str(i) + ".png", "PNG")
 
 
 #out_path = ""
