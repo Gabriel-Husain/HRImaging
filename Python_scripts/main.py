@@ -15,6 +15,7 @@ for i in range(10):
     stream.seek(0)
     image = Image.open(stream)
     image.save("../out/img" + str(i) + ".png", "PNG")
+    camera.close()
 
 
 #out_path = ""
