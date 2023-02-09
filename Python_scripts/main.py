@@ -3,6 +3,7 @@ import time
 # Added packages
 from io import BytesIO
 from PIL import Image
+import datetime
 
 for i in range(10):
     # Create the in-memory stream
@@ -16,6 +17,7 @@ for i in range(10):
     image = Image.open(stream)
     image.save("../out/img" + str(i) + ".png", "PNG")
     camera.close()
+    print("image captured", datetime.datetime.now())
 
 
 #out_path = ""
