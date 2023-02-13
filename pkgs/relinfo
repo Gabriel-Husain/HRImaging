@@ -1,0 +1,4 @@
+
+# Added by pim
+import datetime
+self.release_info = {'comment': None, 'publish_id': 44L, 'product': u'gplinuxrpm', 'gitdate': None, 'name': u'PanGPLinux', 'repository': u'gpl_6_0_4', 'githash': None, 'variant': None, 'meta': None, 'p4change': 1249931L, 'label': None, 'platform': u'any', 'state': 0L, 'version': u'6.0.4', 'flags': u'insecure,app_package', 'rel': 25L, 'branch': u'globalprotect/release/elk', 'date': datetime.datetime(2022, 10, 25, 9, 36, 12), 'base': None, 'type': u'c', 'id': 4779L}
