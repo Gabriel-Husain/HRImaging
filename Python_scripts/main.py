@@ -8,8 +8,10 @@ import datetime
 for i in range(10):
     # Create the in-memory stream
     stream = BytesIO()
+
     camera = PiCamera()
-    camera.start_preview()
+    camera.resolution = (3280,2464)
+    #camera.start_preview()
     time.sleep(2)
     camera.capture(stream, format='png')
     # "Rewind" the stream to the beginning so we can read its content
