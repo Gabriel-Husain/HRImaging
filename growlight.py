@@ -32,11 +32,14 @@ def takePicture(folderName, photoName):
     camera.start_preview()
     time.sleep(2)
 
-    os.mkdir("home/pi/stage/" + folderName)
+    folder = os.path.join("/home/pi/stage/", folderName)
+
+    os.mkdir(folder)
+
+    photo = folder = os.path.join("/home/pi/stage/", folderName)
 
     # capture image
-    camera.capture("home/pi/stage/" + 
-            folderName + 
+    camera.capture(folder + 
             "/" + 
             photoName + str((time.time() - now)/60) + 
             ".jpg")
