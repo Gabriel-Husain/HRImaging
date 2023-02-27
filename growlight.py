@@ -39,7 +39,7 @@ def takePicture(folderName, photoName):
     # photo = os.path.join("/home/pi/stage/", folderName)
 
     # capture image
-    camera.capture(folder + "/" + photoName + str((time.time() - now)/60) + ".jpg", format="jpeg")
+    camera.capture("/home/pi/stage/" + folderName + "/" + photoName + str((time.time() - now)/60) + ".jpg", format="jpeg")
 
     # Below for Pil Capture
 
