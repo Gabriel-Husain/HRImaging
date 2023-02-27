@@ -32,8 +32,14 @@ def takePicture(folderName, photoName):
     camera.start_preview()
     time.sleep(2)
 
+    os.mkdir("home/pi/stage/" + folderName)
+    
     # capture image
-    camera.capture("/stage/" + folderName + "/" + photoName + ".jpg")
+    camera.capture("home/pi/stage/" + 
+            folderName + 
+            "/" + 
+            photoName + str((time.time() - now)/60) + 
+            ".jpg")
 
     # Below for Pil Capture
 
@@ -44,8 +50,6 @@ def takePicture(folderName, photoName):
     # image.save("/stage/" + folderName + "/" + photoName + ".png", "PNG")
     camera.close()
     print("image captured")
-
-    os.mkdir("home/pi/stage/" + folderName)
 
     # return path
     return ("home/pi/stage/" + 
