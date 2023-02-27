@@ -45,7 +45,7 @@ def takePicture(folderName, photoName):
     print("image captured")
 
     # return path
-    return ("/stage/" + 
+    return ("home/pi/stage/" + 
             folderName + 
             "/" + 
             photoName + str((time.time-now)/60) + 
