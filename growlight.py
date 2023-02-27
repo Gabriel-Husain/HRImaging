@@ -48,9 +48,9 @@ def takePicture(folderName, photoName):
     return ("home/pi/stage/" + 
             folderName + 
             "/" + 
-            photoName + str((time.time-now)/60) + 
+            photoName + str((time.time() - now)/60) + 
             ".jpg")
 
-while (True and (time.time-now)/60/60 < 72):
+while ((time.time() - now)/60/60 < 72):
     takePicture("GrowSpaceProject", "TestPhotos")
     time.sleep(5)
