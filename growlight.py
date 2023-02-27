@@ -36,13 +36,11 @@ def takePicture(folderName, photoName):
 
     os.mkdir(folder)
 
-    photo = folder = os.path.join("/home/pi/stage/", folderName)
+    # photo = os.path.join("/home/pi/stage/", folderName)
 
     # capture image
     camera.capture(folder + 
-            "/" + 
-            photoName + str((time.time() - now)/60) + 
-            ".jpg")
+            "/" + photoName + str((time.time() - now)/60) + ".jpg", format="jpeg")
 
     # Below for Pil Capture
 
