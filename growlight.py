@@ -1,5 +1,6 @@
 from picamera import PiCamera
 import time
+import os
 
 #stream = BytesIO()
 camera = PiCamera()
@@ -43,6 +44,8 @@ def takePicture(folderName, photoName):
     # image.save("/stage/" + folderName + "/" + photoName + ".png", "PNG")
     camera.close()
     print("image captured")
+
+    os.mkdir("home/pi/stage/" + folderName)
 
     # return path
     return ("home/pi/stage/" + 
