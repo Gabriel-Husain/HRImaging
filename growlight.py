@@ -51,6 +51,6 @@ def takePicture(folderName, photoName):
             photoName + str((time.time-now)/60) + 
             ".jpg")
 
-while (True):
+while (True and (time.time-now)/60/60 < 72):
     takePicture("GrowSpaceProject", "TestPhotos")
     time.sleep(5)
