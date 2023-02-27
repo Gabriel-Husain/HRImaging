@@ -33,7 +33,7 @@ def takePicture(folderName, photoName):
     time.sleep(2)
 
     os.mkdir("home/pi/stage/" + folderName)
-    
+
     # capture image
     camera.capture("home/pi/stage/" + 
             folderName + 
