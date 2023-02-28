@@ -33,8 +33,11 @@ def takePicture(folderName, photoName):
     time.sleep(2)
 
     folder = os.path.join("/home/pi/stage/", folderName)
-    if not os.path.isdir(folder):
+    stage = "/home/pi/stage/"
+    if not os.path.isdir(stage):
+        os.mkdir(stage)
 
+    if not os.path.isdir(folder):
         os.mkdir(folder)
 
     # photo = os.path.join("/home/pi/stage/", folderName)
