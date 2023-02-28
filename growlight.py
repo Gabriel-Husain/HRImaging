@@ -3,8 +3,6 @@ import time
 import os
 
 #stream = BytesIO()
-camera = PiCamera()
-
 now = time.time()
 
 def takePicture(folderName, photoName):
@@ -13,7 +11,7 @@ def takePicture(folderName, photoName):
     '''
     assert isinstance(folderName, str), "Folder is not valid"
     assert isinstance(photoName, str), "photo name is not valid"
-
+    camera = PiCamera()
     # sets up camera resolution to max
     camera.resolution = (3280,2464)
     # Options for awb
