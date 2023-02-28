@@ -57,7 +57,9 @@ def takePicture(folderName, photoName):
     return ("home/pi/stage/" + 
             folderName + 
             "/" + 
-            photoName + str((time.time() - now)/60) + 
+            photoName + str((time.time() - now)//(60*60)) + 
+            "h" +
+            str((time.time() - now)// 60 % 60) +
             ".jpg")
 
 while ((time.time() - now)/60/60 < 72):
