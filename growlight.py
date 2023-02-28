@@ -62,4 +62,4 @@ def takePicture(folderName, photoName):
 
 while ((time.time() - now)/60/60 < 72):
     takePicture("GrowSpaceProject", "TestPhotos")
-    time.sleep(5)
+    time.sleep(60*60)
