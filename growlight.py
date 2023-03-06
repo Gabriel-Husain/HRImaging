@@ -1,6 +1,7 @@
 from picamera import PiCamera
 import time
 import os
+import datetime
 
 #stream = BytesIO()
 now = time.time()
@@ -41,7 +42,7 @@ def takePicture(folderName, photoName):
     # photo = os.path.join("/home/pi/stage/", folderName)
 
     # capture image
-    camera.capture("/home/pi/stage/" + folderName + "/" + photoName + str((time.time() - now)/60) + ".jpg", format="jpeg")
+    camera.capture("/home/pi/stage/" + folderName + "/" + photoName + str(datetime.now().strftime("%Y-%m-%d_%H:%M:%S")) + ".jpg", format="jpeg")
 
     # Below for Pil Capture
 
@@ -55,13 +56,10 @@ def takePicture(folderName, photoName):
 
     # return path
     return ("home/pi/stage/" + 
-            folderName + 
-            "/" + 
-            photoName + str((time.time() - now)//(60*60)) + 
-            "h" +
-            str((time.time() - now)// 60 % 60) +
-            ".jpg")
+            folderName + "/" + 
+            photoName + 
+            str(datetime.now().strftime("%Y-%m-%d_%H:%M:%S")) + ".jpg")
 
-while ((time.time() - now)/60/60 < 72):
-    takePicture("GrowSpaceProject", "TestPhotos")
+while ((time.time() - now)/60/60 < 720):
+    takePicture("LabCart", "CartPhoto")
     time.sleep(60*60)

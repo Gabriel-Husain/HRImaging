@@ -5,11 +5,12 @@ from io import BytesIO
 from PIL import Image
 import datetime
 
+stream = BytesIO()
+camera = PiCamera()
+
 for i in range(10):
     # Create the in-memory stream
-    stream = BytesIO()
-
-    camera = PiCamera()
+    
     camera.resolution = (3280,2464)
     camera.start_preview()
     time.sleep(2)
