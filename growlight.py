@@ -23,9 +23,9 @@ cv2.destroyAllWindows()
 now = time.time()
 
 def takePicture(folderName, photoName):
-    '''
+'''
     # Saves picture under specified folder using specified photo name
-    '''
+'''
     assert isinstance(folderName, str), "Folder is not valid"
     assert isinstance(photoName, str), "photo name is not valid"
     camera = PiCamera()
