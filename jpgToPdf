@@ -1,0 +1,28 @@
+from PIL import Image
+from PyPDF2 import PdfFileMerger
+import os
+
+# Set path to USB drive directory
+usb_drive_path = '/media/usb_drive/'
+
+# Get list of files in USB drive directory
+files = os.listdir(usb_drive_path)
+
+# Filter image filenames and store in array
+image_filenames = [filename for filename in files if filename.endswith(('.jpg', '.jpeg', '.png', '.bmp'))]
+image_filenames = np.array(image_filenames)
+
+# Open all images and add to a list
+images = []
+for filename in image_filenames:
+
+#with all the filenames to convert
+    images.append(Image.open(filename))
+
+# Merge images into a single PDF file
+pdf_merger = PdfFileMerger()
+for image in images:
+    pdf_merger.append(image)
+
+# Save PDF file
+pdf_merger.write('output.pdf')
